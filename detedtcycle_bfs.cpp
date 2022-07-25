@@ -5,6 +5,7 @@ using namespace std;
 #include <queue>
 #include <list>
 
+// undirected graph
 bool cycleCheck(int src, unordered_map<int, bool> &visited, unordered_map<int, list<int>> &adjList)
 {
     unordered_map<int, int> parent;

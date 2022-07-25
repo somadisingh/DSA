@@ -3,7 +3,7 @@ using namespace std;
 
 #include <unordered_map>
 #include <list>
-
+// undirected graph
 bool cycleCheck(int node, int parent, unordered_map<int, bool> &visited, unordered_map<int, list<int>> &adjList)
 {
     visited[node] = true;
