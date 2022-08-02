@@ -21,7 +21,7 @@ vector<pair<pair<int, int>, int>> calculatePrimsMST(int n, int m, vector<pair<pa
     // initialize the mst, key & parent array
     vector<int> parent(n + 1); // to store the node's parent
     vector<int> key(n + 1);    // to store the minimum distance between two nodes
-    vector<bool> mst(n + 1);   // to see if the has been visited or not
+    vector<bool> mst(n + 1);   // to see if the node is in the mst or not
     for (int i = 0; i <= n; i++)
     {
         key[i] = INT_MAX;
