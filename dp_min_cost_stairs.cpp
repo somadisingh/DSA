@@ -29,7 +29,7 @@ public:
     }
 };
 
-// int n = cost.size();
+// int n = cost.size(); TABULATION METHOD
 //         vector<int>dp(n+1,-1);
 //         dp[0]=cost[0];
 //         dp[1]=cost[1];
@@ -40,3 +40,13 @@ public:
 //         int ans;
 //         ans = min(dp[n-1], dp[n-2]);
 //         return ans;
+
+// int n = cost.size(); CONSTANT SPACE METHOD
+// int prev1=cost[0];
+// int prev2=cost[1];
+// for (int i = 2; i < n; i++) {
+//     int ans = cost[i] + min(prev1, prev2);
+//     prev1=prev2;
+//     prev2=ans;
+// }
+// return min(prev1,prev2);
