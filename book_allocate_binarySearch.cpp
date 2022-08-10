@@ -4,6 +4,7 @@ using namespace std;
 
 // time complexity: O(log(n))
 // space complexity: O(1)
+// minimize the maximum amount
 bool solution(int n, int m, long long int mid, vector<int> &time)
 {
     long long int day = 1;
