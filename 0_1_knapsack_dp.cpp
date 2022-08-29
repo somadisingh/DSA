@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 //  solution using recursion and memoization
@@ -40,7 +41,7 @@ int knapsack(vector<int> weight, vector<int> value, int n, int maxWeight)
     return res;
 }
 
-// int main()
+int main()
 {
     int n, maxWeight;
     cin >> n >> maxWeight;
