@@ -25,12 +25,12 @@ public:
         vector<int> adj[n];
         vector<bool> vis(n, 0);
 
-        // prep adjacency list
+        // prep adjacency list from a given adjacency matrix
         for (int i = 0; i < n; i++)
         {
             for (int j = 0; j < n; j++)
             {
-                if (isConnected[i][j] == 1)
+                if (isConnected[i][j] == 1 && i != j)
                     adj[i].push_back(j), adj[j].push_back(i);
             }
         }
