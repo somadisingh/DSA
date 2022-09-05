@@ -34,7 +34,11 @@ public:
             {
                 TreeNode *front = q.front();
                 q.pop();
-                if (front->left == NULL && front->right == NULL)
+                if (front->left == NULL && front->right == NULL) // as soon as node with no children is found, return depth
+                {
+                    trigger = 1;
+                    break;
+                }
                 {
                     trigger = 1;
                     break;
