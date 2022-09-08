@@ -3,6 +3,7 @@
 
 using namespace std;
 
+// recursion and memoization
 class Solution
 {
 public:
@@ -34,3 +35,31 @@ public:
         return lcs(m - 1, n - 1, text1, text2, dp);
     }
 };
+
+// tabulation
+int longestCommonSubsequence(string text1, string text2)
+{
+    int m = text1.length();
+    int n = text2.length();
+    vector<vector<int>> dp(m + 1, vector<int>(n + 1, 0));
+
+    for (int i = 0; i <= m; i++)
+    {
+        for (int j = 0; j <= n; j++)
+        {
+            if (i == 0 || j == 0) // base case
+                dp[i][j] = 0;
+            else
+            { // recusrive case
+                int match = 0;
+                if (text1[i - 1] == text2[j - 1])
+                    match = 1 + dp[i - 1][j - 1];
+
+                int notMatch = max(dp[i - 1][j], dp[i][j - 1]);
+
+                dp[i][j] = max(match, notMatch);
+            }
+        }
+    }
+    return dp[m][n];
+}
