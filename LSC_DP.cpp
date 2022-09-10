@@ -71,7 +71,7 @@ int longestCommonSubsequence(string text1, string text2)
     int m = text1.length();
     int n = text2.length();
     vector<vector<int>> dp(m + 1, vector<int>(n + 1, 0));
-
+    // base case already included in the initialization of dp
     for (int i = 1; i <= m; i++)
     {
         for (int j = 1; j <= n; j++)
@@ -84,6 +84,17 @@ int longestCommonSubsequence(string text1, string text2)
     }
     return dp[m][n];
 }
+
+/* ALTERNATIVE APPROACH
+    for (int j = 1; j <= n; j++) {
+                int notMatch = max(dp[i-1][j], dp[i][j-1]);
+                int match = 0;
+                if (s1[i-1] == s2[j-1]) match = 1 + dp[i-1][j-1];
+                dp[i][j] = max(match, notMatch);
+        }
+    }
+    return dp[m][n];
+*/
 
 // space optimized
 
@@ -106,4 +117,45 @@ int longestCommonSubsequence(string text1, string text2)
         prev = curr;
     }
     return prev[n];
+}
+
+// print lcs
+
+void printLCS(string s1, string s2)
+{
+    int m = s1.length();
+    int n = s2.length();
+    vector<vector<int>> dp(m + 1, vector<int>(n + 1, 0));
+
+    for (int i = 1; i <= m; i++)
+    {
+        for (int j = 1; j <= n; j++)
+        {
+            if (s1[i - 1] == s2[j - 1])
+                dp[i][j] = 1 + dp[i - 1][j - 1];
+            else
+                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]);
+        }
+    }
+
+    string ans = "";
+    int i = m, j = n;
+    while (i > 0 && j > 0)
+    {
+        if (s1[i - 1] == s2[j - 1])
+        {
+            ans += s1[i - 1];
+            i--;
+            j--;
+        }
+        else
+        {
+            if (dp[i - 1][j] > dp[i][j - 1])
+                i--;
+            else
+                j--;
+        }
+    }
+    reverse(ans.begin(), ans.end());
+    cout << ans << endl;
 }
