@@ -72,3 +72,31 @@ int main()
     cout << maxProfit(prices) << endl;
     return 0;
 }
+
+// constant space
+
+int maxProfit(vector<int> &prices)
+{
+
+    int n = prices.size();
+    vector<vector<int>> after(2, vector<int>(3, 0));
+    vector<vector<int>> curr(2, vector<int>(3, 0));
+
+    for (int ind = n - 1; ind >= 0; ind--)
+    {
+        for (int buy = 0; buy <= 1; buy++)
+        {
+            for (int tran = 1; tran <= 2; tran++)
+            {
+                if (buy)
+                {
+                    curr[buy][tran] = max(-prices[ind] + after[0][tran], after[1][tran]);
+                }
+                else
+                    curr[buy][tran] = max(prices[ind] + after[1][tran - 1], after[0][tran]);
+            }
+        }
+        after = curr;
+    }
+    return after[1][2];
+}
