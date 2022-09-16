@@ -83,3 +83,18 @@ public:
         m[_key] = head->next;              // insert key with address of last used
     }
 };
+
+int main()
+{
+    LRUCache *obj = new LRUCache(2);
+    obj->put(1, 1);
+    obj->put(2, 2);
+    cout << obj->get(1) << endl;
+    obj->put(3, 3);
+    cout << obj->get(2) << endl;
+    obj->put(4, 4);
+    cout << obj->get(1) << endl;
+    cout << obj->get(3) << endl;
+    cout << obj->get(4) << endl;
+    return 0;
+}
