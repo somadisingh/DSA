@@ -49,7 +49,9 @@ int main()
     int n = 3;
     vector<vector<int>> edges = {{0, 1}, {1, 2}, {0, 2}};
     int source = 0, destination = 2;
-    Solution s;
-    cout << s.validPath(n, edges, source, destination) << endl;
+
+    Solution obj;
+    cout << obj.validPath(n, edges, source, destination) << endl;
+
     return 0;
 }
