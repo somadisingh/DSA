@@ -48,7 +48,7 @@ int main()
     while(std::cin>>num) v.push_back(num);
     
     // condition lagao: case 1: benchmark score<=0
-    int bench_score = v[bench];
+    int bench_score = v[bench-1];
     int ans=0;
     
     if (bench_score<=0) {
