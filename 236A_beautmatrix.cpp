@@ -43,6 +43,10 @@ input
 0 0 0 0 0
 output
 1
+
+LOGIC: subtract 3,3 from x and y coords of 1 in the matrix.
+no need to strore input in matrix. just iterate the input keep
+a counter for x and y coords of 1. then subtract 3 from both.
 */
 
 #include <iostream>
@@ -63,6 +67,22 @@ int main()
         }
     }
     int res = abs(3-x) + abs(3-y);
+    cout<<res;
+    return 0;
+}
+
+int optimized()
+{
+    int one, res;
+    for (int i = 1; i <=5; i++) {
+        for (int j = 1; j <=5; j++) {
+            cin>>one;
+            if (one==1) {
+                res = abs(3-i) + abs(3-j);
+              break;
+            }
+        }
+    }
     cout<<res;
     return 0;
 }
