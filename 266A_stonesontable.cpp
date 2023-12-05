@@ -33,6 +33,12 @@ BRBG
 output
 0
 
+
+logic aisa hai ki pehle ek counter assign kardo 0th element array ka and ek variable rem assign kardo 0
+then ek corner case handle karlo that is agar string ka length 1 hai then return 0
+nai to 1st element se iterate karo aur check karo ki jo pichla element hai wo same hai ya nai
+pichla element in the first iteration counter mei hai. agar element same hai then rem ko increment kardo
+agar element alag hai to fir counter ko update karke current element kardo. rem ko kuch mat karo.
 */
 
 
