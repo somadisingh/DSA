@@ -25,6 +25,9 @@ input
 4 9
 output
 3
+
+pehli jhalak me ye problem for loop laga kar solve ho sakta hai, har loop me calculate karte raho a & b and jaha a>b break karke print kardo
+but isse better rahega ki math equation banalo. a*b^x > b*a^x ko sinplify karo aur x nikal lo. x = log(b/a)/log(3/2) + 1
 */
 
 
