@@ -26,10 +26,11 @@ input
 output
 YES
 
-logic yahi hai ki ek counter rekho 0th element par, then start iterating from seconf element and check if its the same as
+logic yahi hai ki ek counter rekho 0th element par, then start iterating from second element and check if its the same as
 its previous element which is the counter. agar hai same to player count badhado aur wahi par ek check daaldo ki agar player count
 7 hojaye to answer me yes store karlo aur loop se break karjao. agar same nahi hai to counter ko update kardo to the current element
 and player count ko reset kardo back to 1. also before starting the loop answer me no store karlo.
+Optimization: if string length is <7 then answer is always no.
 */
 
 
@@ -43,6 +44,12 @@ int main()
 {
     string s;
     cin>>s;
+
+    if (s.length()<7) {
+        cout<<"NO";
+        return 0;
+    }
+
     int players=1;
     char counter=s[0];
     string ans="NO";
