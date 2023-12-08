@@ -2,7 +2,7 @@
 #include <vector>
 #include <climits>
 #include <algorithm>
-
+// https://codeforces.com/problemset/problem/337/A
 using namespace std;
 
 int main()
